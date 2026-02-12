@@ -48,7 +48,10 @@ const useGetCalls = () => {
     return startsAt && new Date(startsAt) < now && !endedAt;
   });
 
+  return { calls, endedCalls, upcomingCalls, liveCalls, isLoading };
+};
 
+export default useGetCalls;
 
 
 
@@ -68,7 +71,3 @@ const useGetCalls = () => {
 // const liveCalls = calls?.filter(({ state: { startsAt, endedAt } }: Call) => {
 //   return !endedAt && startsAt && new Date(startsAt) <= now;
 // });
-  return { calls, endedCalls, upcomingCalls, liveCalls, isLoading };
-};
-
-export default useGetCalls;
